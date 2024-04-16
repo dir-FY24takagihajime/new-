@@ -1,28 +1,21 @@
 package 復習２;
 
 public class Employee {
- // フィールド
-    String name;
-    String department;
-    String position;
-    int employeeId;
-
-    // コンストラクター
-    public Employee(String name, String department, String position, int employeeId) {
-        this.name = name;
-        this.department = department;
-        this.position = position;
-        this.employeeId = employeeId;
+    public static void main (String[] args) {
+        String[] names = {"桜井", "田原", "中川", "鈴木"};
+        String serch  = args[0];
+        int i;
+        
+        for(i = 0; i < names.length; i++) {
+            if(serch.equals(names[i])) {
+                break;
+            }
+        }
+        if(i < names.length) {
+            System.out.println(serch + "は含まれています。");
+        } else {
+            System.out.println(serch + "は含まれていません。");
+        }
     }
-
-    // 報告メソッド
-    public void report(int times) {
-        System.out.println(times + "回目の報告をします。役職：" + position + "、名前：" + name);
-    }
-
-    // 報告メソッド（オーバーロード）
-    public void report() {
-        report(1);
-    }
-
+    
 }
